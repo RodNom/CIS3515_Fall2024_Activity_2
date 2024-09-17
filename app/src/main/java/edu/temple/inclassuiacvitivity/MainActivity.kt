@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
         /* TODO Step 2: Populate this array with multiples of 5 from 5 - 100*/
-        //val numberArray = Array Of Numbers
+        //val numberArray = (5 .. 100 step 5).toList()
 
         /* TODO Step 3: Create adapter to display items from array in Spinner */
         //spinner.adapter = ArrayAdapter...

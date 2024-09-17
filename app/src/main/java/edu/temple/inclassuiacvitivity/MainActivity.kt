@@ -2,8 +2,12 @@ package edu.temple.inclassuiacvitivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
+import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,14 @@ class MainActivity : AppCompatActivity() {
 
 
         // TODO Step 4: Change TextView's text size to the number selected in the Spinner */
-        //spinner.onItemSelectedListener = object: ...
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedNumber = numberArray[position]
+                displayTextView.textSize = selectedNumber.toFloat() // Update text size of displayTextView
+            }
 
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
     }
 }
